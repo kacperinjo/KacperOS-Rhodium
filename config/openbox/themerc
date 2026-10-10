@@ -1,0 +1,55 @@
+# KacperOS-dark — based on Onyx-black (AquaFox / Dana Jansens),
+# retinted for the KacperOS wallpaper and thicker hit targets.
+
+menu.items.bg: flat solid
+menu.items.bg.color: #1A1F28
+menu.items.text.color: #E6EEF6
+menu.items.justify: left
+menu.items.disabled.text.color: #6A7380
+
+menu.title.bg: flat solid
+menu.title.bg.color: #12161C
+menu.title.text.color: #E6EEF6
+menu.title.text.justify: center
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #2E6F95
+menu.items.active.text.color: #FFFFFF
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #1E2834
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #12161C
+
+window.label.text.justify: center
+window.active.label.bg: parentrelative
+window.active.label.text.color: #F4F7FA
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #7A8490
+
+window.*.button.*.bg: parentrelative
+window.active.button.*.hover.bg: flat solid
+window.active.button.*.hover.bg.color: #2E6F95
+window.active.button.*.hover.image.color: #FFFFFF
+window.*.button.*.pressed.bg: flat solid
+window.*.button.*.pressed.bg.color: #3D8BB8
+window.active.button.*.image.color: #E6EEF6
+window.inactive.button.*.image.color: #7A8490
+
+window.active.border.color: #2E6F95
+window.inactive.border.color: #12161C
+border.width: 2
+padding.width: 5
+padding.height: 4
+window.handle.width: 0
+window.active.client.color: #12161C
+window.inactive.client.color: #12161C
+window.client.padding.width: 1
+window.client.padding.height: 1
+menu.overlap: 0
+menu.border.color: #2E6F95
+menu.border.width: 1
+
+osd.bg: flat solid
+osd.bg.color: #1A1F28
+osd.label.text.color: #E6EEF6

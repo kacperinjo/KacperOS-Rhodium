@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# rc.local
+#
+
+echo "Activating sound"
+/usr/bin/playwav2 || true
+
+# Must not depend on playwav2 succeeding. The light helper keeps
+# running so the slide keyboard can light after it is opened.
+if [ -x /etc/kacperos-kbd-light ]; then
+    /etc/kacperos-kbd-light >/dev/null 2>&1 &
+fi
+
+exit 0

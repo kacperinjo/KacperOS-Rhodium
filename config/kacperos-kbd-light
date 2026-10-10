@@ -1,0 +1,72 @@
+#!/bin/sh
+# Rhodium slide-keyboard LEDs. The microp driver leaves them at 0 and
+# can keep them off while auto_backlight is on. Re-apply so opening
+# the keyboard still ends up lit.
+LOG=/var/log/kbd-light.log
+logged=0
+
+log() {
+    if [ "$logged" -lt 8 ]; then
+        echo "$*" >> "$LOG"
+        logged=$((logged + 1))
+    fi
+}
+
+apply() {
+    found=0
+    for f in \
+        /sys/devices/platform/microp-klt/auto_backlight \
+        /sys/class/leds/klt::keypad-bkl/device/auto_backlight \
+        /sys/class/leds/button-backlight/device/auto_backlight
+    do
+        if [ -e "$f" ]; then
+            echo 0 > "$f" 2>>"$LOG" || true
+            log "auto_backlight 0 $f"
+            found=1
+        fi
+    done
+
+    for d in /sys/class/leds/*; do
+        name=${d##*/}
+        case "$name" in
+            *keypad*|*keyboard*|*kbd*) ;;
+            *) continue ;;
+        esac
+        if [ -w "$d/brightness" ]; then
+            if [ -r "$d/max_brightness" ]; then
+                cat "$d/max_brightness" > "$d/brightness" 2>>"$LOG" || true
+            else
+                echo 255 > "$d/brightness" 2>>"$LOG" || true
+            fi
+            log "brightness $name"
+            found=1
+        fi
+        if [ -w "$d/brightness2" ]; then
+            echo 10 > "$d/brightness2" 2>>"$LOG" || true
+            log "brightness2 $name"
+        fi
+    done
+
+    if [ "$found" -eq 0 ]; then
+        log "no keypad led"
+        ls /sys/class/leds >> "$LOG" 2>&1 || true
+    fi
+}
+
+n=0
+while [ "$n" -lt 20 ]; do
+    if [ -e /sys/class/leds/klt::keypad-bkl/brightness ]; then
+        break
+    fi
+    n=$((n + 1))
+    sleep 1
+done
+
+log "start after ${n}s"
+ls /sys/class/leds >> "$LOG" 2>&1 || true
+apply
+
+while true; do
+    sleep 3
+    apply
+done

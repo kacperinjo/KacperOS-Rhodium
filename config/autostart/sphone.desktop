@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Application;Telephony;
+Exec=sphone
+GenericName=SPhone
+Icon=wicd-gtk
+Name=Phone application
+Comment=Manage voice calls and SMS
+Terminal=false
+Type=Application
+Version=0.04
+Hidden=true
+X-GNOME-Autostart-enabled=false

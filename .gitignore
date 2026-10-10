@@ -1,0 +1,26 @@
+# Root filesystems and release blobs — never commit these to Git.
+*.img
+*.img.gz
+*.img.xz
+debian.img
+qemu-arm-static
+
+# Local work / mount debris
+*.iso
+*.tar
+*.tar.gz
+*.tar.xz
+*.zip
+*.7z
+!docs/**
+!LICENSES/**
+
+# Editor / OS
+*~
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Extracted debug copies
+/tmp/

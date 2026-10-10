@@ -1,0 +1,25 @@
+#!/bin/sh
+# KacperOS Rhodium session — Openbox + LXPanel + PCManFM desktop.
+# Started by nodm via /etc/X11/Xsession → ~/.xsession
+
+export LANG=pl_PL.UTF-8
+export LC_ALL=pl_PL.UTF-8
+export LC_CTYPE=pl_PL.UTF-8
+export DESKTOP_SESSION=KacperOS
+export XDG_CURRENT_DESKTOP=LXDE
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+xsetroot -solid "#12161C"
+
+# Desktop icons/wallpaper only. Wallpaper path lives in pcmanfm.conf.
+# Do not call extra pcmanfm instances — they open file-manager windows.
+pcmanfm --desktop &
+
+lxpanel --profile LXDE &
+
+# Tray (Wi-Fi). Harmless if wicd is already running.
+if command -v wicd-gtk >/dev/null 2>&1; then
+    wicd-gtk --tray >/dev/null 2>&1 &
+fi
+
+exec openbox

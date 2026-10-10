@@ -1,0 +1,4 @@
+# Locales built for KacperOS Rhodium.
+# After changing this file, run locale-gen inside the ARM chroot.
+en_US ISO-8859-1
+pl_PL.UTF-8 UTF-8

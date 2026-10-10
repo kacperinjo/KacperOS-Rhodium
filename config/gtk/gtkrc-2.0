@@ -1,0 +1,54 @@
+# KacperOS Rhodium — dark GTK2, larger widgets for 800x480 touch.
+gtk-font-name = "Sans 12"
+gtk-icon-theme-name = "nuoveXT2"
+gtk-toolbar-icon-size = GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images = 1
+gtk-menu-images = 1
+gtk-icon-sizes = "gtk-menu=24,24:gtk-button=28,28:gtk-small-toolbar=28,28:gtk-large-toolbar=32,32:gtk-dialog=32,32:panel=32,32:panel-menu=32,32"
+
+style "kacperos-dark" {
+  xthickness = 4
+  ythickness = 5
+
+  fg[NORMAL]        = "#E6EEF6"
+  fg[PRELIGHT]      = "#FFFFFF"
+  fg[SELECTED]      = "#FFFFFF"
+  fg[ACTIVE]        = "#E6EEF6"
+  fg[INSENSITIVE]   = "#7A8490"
+
+  bg[NORMAL]        = "#1A1F28"
+  bg[PRELIGHT]      = "#2A3544"
+  bg[SELECTED]      = "#2E6F95"
+  bg[ACTIVE]        = "#12161C"
+  bg[INSENSITIVE]   = "#1A1F28"
+
+  base[NORMAL]      = "#12161C"
+  base[PRELIGHT]    = "#1A1F28"
+  base[ACTIVE]      = "#12161C"
+  base[SELECTED]    = "#2E6F95"
+  base[INSENSITIVE] = "#1A1F28"
+
+  text[NORMAL]      = "#E6EEF6"
+  text[PRELIGHT]    = "#FFFFFF"
+  text[SELECTED]    = "#FFFFFF"
+  text[ACTIVE]      = "#E6EEF6"
+  text[INSENSITIVE] = "#7A8490"
+}
+
+style "kacperos-button" = "kacperos-dark" {
+  xthickness = 8
+  ythickness = 8
+}
+
+style "kacperos-menu" = "kacperos-dark" {
+  xthickness = 6
+  ythickness = 6
+}
+
+class "GtkWidget"   style "kacperos-dark"
+class "GtkButton"   style "kacperos-button"
+class "GtkMenuItem" style "kacperos-menu"
+class "GtkEntry"    style "kacperos-dark"
+class "GtkTextView" style "kacperos-dark"
+class "GtkTreeView" style "kacperos-dark"
+class "GtkWindow"   style "kacperos-dark"
