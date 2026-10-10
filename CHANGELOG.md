@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 — 2026-10-10
+
+- `sudo` for the autologin account `user` no longer asks for a password (`/etc/sudoers.d/user`).
+
 ## 0.1.2 — 2026-10-10
 
 Boot-tested on HTC Touch Pro2 RHOD100. This is the image published with the HaRET boot files.

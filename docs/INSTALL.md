@@ -4,7 +4,7 @@
 
 - HTC Touch Pro2 (Rhodium **RHOD100**) z Windows Mobile
 - karta microSD sformatowana jako **FAT32**
-- pliki z wydania **0.1.2** (boot z repozytorium albo z release, `debian.img` z release)
+- pliki z wydania **0.1.3** (boot z repozytorium albo z release, `debian.img` z release)
 
 Initrd montuje **wyłącznie** `/sdcard/debian.img`. Plik musi leżeć w **katalogu głównym** karty, nie w podfolderze.
 

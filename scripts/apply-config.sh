@@ -68,6 +68,7 @@ write_file "$REPO_ROOT/config/locale/environment" /etc/environment
 write_file "$REPO_ROOT/config/autostart/sphone.desktop" /etc/xdg/autostart/sphone.desktop
 write_file "$REPO_ROOT/config/rc.local" /etc/rc.local 0100755
 write_file "$REPO_ROOT/config/kacperos-kbd-light" /etc/kacperos-kbd-light 0100755
+write_file "$REPO_ROOT/config/sudoers.d/user" /etc/sudoers.d/user 0100440
 
 # wl1251 rejects mixed TKIP+CCMP and wicd reports that as a bad password.
 write_file "$REPO_ROOT/config/wicd/wpa" /etc/wicd/encryption/templates/wpa 0100644

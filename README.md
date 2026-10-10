@@ -18,16 +18,16 @@ Branding, układ sesji, skrypty i tapeta są z tego projektu. Debian, kernel, Ha
 | Pulpit / desktop | Openbox + LXPanel + PCManFM, autologowanie przez nodm jako `user` |
 | Locale | `pl_PL.UTF-8` |
 | Wi-Fi | Texas Instruments wl1251, interfejs `eth0`, sterownik `wext`, tylko **WPA2-PSK (CCMP/AES)** |
-| Wersja / version | [`VERSION`](VERSION) — **0.1.2**, sprawdzona na telefonie 10.10.2026 |
+| Wersja / version | [`VERSION`](VERSION) — **0.1.3**. Obraz 0.1.2 był sprawdzony na telefonie 10.10.2026; 0.1.3 dodaje `sudo` bez hasła. |
 
 ## Gotowiec
 
-Pliki startowe są w tym repozytorium, w `boot/`. Obraz systemu ma ~1,9 GB i jest za duży na zwykły Git, więc leży przy wydaniu **0.1.2** jako `debian.img`.
+Pliki startowe są w tym repozytorium, w `boot/`. Obraz systemu ma ~1,9 GB i jest za duży na zwykły Git, więc leży przy wydaniu **0.1.3** jako `debian.img`.
 
 1. Karta microSD, system plików **FAT32**.
 2. Na **katalog główny** karty skopiuj:
    - `HARET-DEBIAN.EXE`, `startup.txt`, `default.txt`, `zImage`, `initrd.gz` z `boot/` (albo z wydania)
-   - `debian.img` z [wydania 0.1.2](https://github.com/kacperinjo/KacperOS-Rhodium/releases/tag/v0.1.2)
+   - `debian.img` z [wydania 0.1.3](https://github.com/kacperinjo/KacperOS-Rhodium/releases/tag/v0.1.3)
 3. W Windows Mobile uruchom z karty `HARET-DEBIAN.EXE`.
 
 Nazwa obrazu musi zostać `debian.img`. Initrd szuka `/sdcard/debian.img` i nie zagląda do podkatalogów.
